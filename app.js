@@ -1,3 +1,6 @@
+
+
+
 const form = document.form
 const url = "https://api.vschool.io/sheltz/todo"
 // https://pixabay.com/photos/flag-sea-turkey-foca-kusadasi-1244648/
@@ -14,6 +17,10 @@ const getData = async ()=>{
             const title = document.createElement("h1")
             title.textContent = todo.title
             document.body.appendChild(title)
+            //id element created and appeded
+            const _ids = document.createElement("button")
+            _ids.textContent = todo._id
+            document.body.appendChild(_ids)
             //description element created and appeded
             const description = document.createElement("h2")
             description.textContent = todo.description
@@ -30,12 +37,34 @@ const getData = async ()=>{
             const completed = document.createElement("p")
             completed.textContent = todo.completed
             document.body.appendChild(completed)
+
+
+
+
+
+
+            //delete todos
+            _ids.addEventListener("click", e =>{
+                if(_ids){
+                    const deleteId = data[i]._id
+                }
+                // if(_ids){
+                //     console.log("fes")
+                //     axios.delete(`${url}/${_ids}`)
+                //     try {
+                //         alert("yes")
+                //     } catch (error) {
+                //         console.log(error)
+                //     }
+                // }else{
+                //     console.log("no")
+                // }
+            })
         }
     } catch (error) {
         
     }
 }
-
 form.addEventListener("submit", e =>{
     e.preventDefault()
   const newTodo = { title : form.title.value,
@@ -51,4 +80,6 @@ form.addEventListener("submit", e =>{
         console.log("fail")
     }
 })
+
+
 getData()
