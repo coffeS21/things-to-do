@@ -1,16 +1,15 @@
 const form = document.form
 const url = "https://api.vschool.io/sheltz/todo"
+// https://pixabay.com/photos/flag-sea-turkey-foca-kusadasi-1244648/
 
 const getData = async ()=>{
-    
     const res = await axios.get(url)
     try {
         const data = res.data
         console.log(data)
-
+        //looping over data
         for(let i =0; i < data.length; i++){
             const todo = data[i]
-
             //title element created and appeded
             const title = document.createElement("h1")
             title.textContent = todo.title
@@ -36,4 +35,20 @@ const getData = async ()=>{
         
     }
 }
+
+form.addEventListener("submit", e =>{
+    e.preventDefault()
+  const newTodo = { title : form.title.value,
+    description : form.description.value,
+    price : form.price.value,
+    imgUrl : form.imgUrl.value}
+    console.log(newTodo)     
+    
+    axios.post(url, newTodo)
+    try {
+        console.log("you did it")
+    } catch (error) {
+        console.log("fail")
+    }
+})
 getData()
