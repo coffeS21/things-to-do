@@ -47,18 +47,15 @@ const getData = async ()=>{
             _ids.addEventListener("click", e =>{
                 if(_ids){
                     const deleteId = data[i]._id
+                    console.log(deleteId)
+                    axios.delete(`${url}/${deleteId}`)
+                    try {
+                        alert("yes")
+                    } catch (error) {
+                        console.log(error)
+                    }
                 }
-                // if(_ids){
-                //     console.log("fes")
-                //     axios.delete(`${url}/${_ids}`)
-                //     try {
-                //         alert("yes")
-                //     } catch (error) {
-                //         console.log(error)
-                //     }
-                // }else{
-                //     console.log("no")
-                // }
+          
             })
         }
     } catch (error) {
