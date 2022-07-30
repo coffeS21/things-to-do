@@ -10,14 +10,15 @@
     <div id="container">
         <form name="form" action="">
             <fieldset>
-                <input type="text" placeholder="title" name="title">
-                <input type="text" placeholder="description"name="description">
-                <input type="number" placeholder="price" name="price">
+                <input type="text" placeholder="task title" name="title">
+                <input type="text" placeholder="task description"name="description">
+                <input type="number" placeholder="level of urgency 1-10" name="price">
                 <input type="text" placeholder="photo" name="imgUrl">
                 <button>add new todo</button>
+                
             </fieldset>
         </form>
-        <form name="editForm" action="">
+        <!-- <form name="editForm" action="">
             <fieldset>
                 <input type="text" placeholder="title" name="title">
                 <input type="text" placeholder="description"name="description">
@@ -25,7 +26,10 @@
                 <input type="text" placeholder="photo" name="imgUrl">
                 <button>add new todo</button>
             </fieldset>
-        </form>
+        </form> -->
+        <section id="todoContainer">
+
+        </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
